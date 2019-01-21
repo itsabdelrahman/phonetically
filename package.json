@@ -1,5 +1,5 @@
 {
-  "name": "nato-phonetic-alphabet",
+  "name": "phonetic-alphabet",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
