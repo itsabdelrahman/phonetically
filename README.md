@@ -1,6 +1,6 @@
 <div align="center">
   <p>
-    <img src="http://cdn.shopify.com/s/files/1/1061/1924/products/Speech_Bubble_Emoji_grande.png" width="100"/>
+    <img src="https://user-images.githubusercontent.com/11808903/51483989-af04b080-1d9a-11e9-8114-7562db6b1c9c.png" width="100"/>
   </p>
 
   <h1>dialogue</h1>
