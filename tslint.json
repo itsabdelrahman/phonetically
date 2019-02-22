@@ -12,7 +12,9 @@
     "object-literal-sort-keys": false,
     "interface-over-type-literal": false,
     "jsx-no-lambda": false,
-    "no-console": false
+    "no-console": false,
+    "member-ordering": false,
+    "variable-name": false
   },
   "jsRules": {
     "object-literal-sort-keys": false,
