@@ -75,7 +75,7 @@ class App extends React.Component<Props, State> {
                       return (
                         <div key={index}>
                           {characters.map(character => (
-                            <TableCell>
+                            <TableCell style={{ alignItems: 'center' }}>
                               <Heading
                                 size={isMobile ? 'medium' : 'large'}
                                 margin="4px"
@@ -84,6 +84,7 @@ class App extends React.Component<Props, State> {
                               </Heading>
 
                               <Text
+                                style={{ fontWeight: 'bold' }}
                                 size={isMobile ? 'small' : 'medium'}
                                 margin="4px"
                               >
