@@ -50,7 +50,7 @@ class App extends React.Component<Props, State> {
             />
           </Box>
 
-          <Box style={{ flex: 0.8, marginTop: 24 }}>
+          <Box style={{ flex: 0.8, marginTop: 24, marginBottom: 24 }}>
             <Table>
               {words.map((word, index) => {
                 const characters: string[] = word.split('');
