@@ -11,7 +11,7 @@
 
 </div>
 
-<img src="https://user-images.githubusercontent.com/11808903/53286460-1d100f00-376f-11e9-9e7b-7873556ab8dc.png" />
+<img src="https://user-images.githubusercontent.com/11808903/53289786-ddf7b300-379a-11e9-9e06-65946cc08d11.png" />
 
 <br />
 
