@@ -17,6 +17,7 @@
 
 ## Development
 
+- `❯ yarn`
 - `❯ yarn start`
 
 ## License
