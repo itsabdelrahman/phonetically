@@ -13,3 +13,7 @@ body {
 ::selection {
   background: #ff4e00;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
