@@ -1,5 +1,14 @@
 import * as React from 'react';
-import { Grommet, Box, Heading, TextInput, Table, TableCell } from 'grommet';
+import {
+  Grommet,
+  Box,
+  Heading,
+  Text,
+  TextInput,
+  Table,
+  TableCell,
+} from 'grommet';
+import MediaQuery from 'react-responsive';
 import mapping from './mapping';
 
 type Props = {};
@@ -32,52 +41,65 @@ class App extends React.Component<Props, State> {
           },
         }}
       >
-        <Box flex={true} pad="large" background={{ color: 'black' }}>
-          <Box
-            style={{ flex: 0.2 }}
-            pad="small"
-            border={{ color: '#81FCED', size: 'small' }}
-          >
-            <TextInput
-              plain={true}
-              placeholder="Type something here"
-              autoFocus={true}
-              spellCheck={false}
-              value={text}
-              onChange={(event: any) => {
-                this.setState({ text: event.target.value });
-              }}
-            />
-          </Box>
+        <MediaQuery maxDeviceWidth={767}>
+          {isMobile => {
+            return (
+              <Box flex={true} pad="large" background={{ color: 'black' }}>
+                <Box
+                  style={{ flex: 0.2 }}
+                  pad="xsmall"
+                  border={{ color: '#81FCED', size: 'small' }}
+                >
+                  <TextInput
+                    style={{ fontSize: isMobile ? 24 : 40 }}
+                    plain={true}
+                    placeholder="Type something here"
+                    autoFocus={true}
+                    spellCheck={false}
+                    value={text}
+                    onChange={(event: any) => {
+                      this.setState({ text: event.target.value });
+                    }}
+                  />
+                </Box>
 
-          <Box
-            style={{ flex: 0.8, marginTop: 24, marginBottom: 24 }}
-            overflow="scroll"
-            wrap={true}
-          >
-            <Table>
-              {words.map((word, index) => {
-                const characters: string[] = word.split('');
+                <Box
+                  style={{ flex: 0.8, marginTop: 24, marginBottom: 24 }}
+                  overflow="scroll"
+                  wrap={true}
+                >
+                  <Table>
+                    {words.map((word, index) => {
+                      const characters: string[] = word.split('');
 
-                return (
-                  <div key={index}>
-                    {characters.map(character => (
-                      <TableCell>
-                        <Heading size="large" margin="4px">
-                          {character.toUpperCase()}
-                        </Heading>
+                      return (
+                        <div key={index}>
+                          {characters.map(character => (
+                            <TableCell>
+                              <Heading
+                                size={isMobile ? 'medium' : 'large'}
+                                margin="4px"
+                              >
+                                {character.toUpperCase()}
+                              </Heading>
 
-                        <Heading size="small" margin="4px">
-                          {mapping[character.toLowerCase()]}
-                        </Heading>
-                      </TableCell>
-                    ))}
-                  </div>
-                );
-              })}
-            </Table>
-          </Box>
-        </Box>
+                              <Text
+                                size={isMobile ? 'small' : 'medium'}
+                                margin="4px"
+                              >
+                                {mapping[character.toLowerCase()]}
+                              </Text>
+                            </TableCell>
+                          ))}
+                        </div>
+                      );
+                    })}
+                  </Table>
+                </Box>
+              </Box>
+            );
+          }}
+        </MediaQuery>
       </Grommet>
     );
   }
