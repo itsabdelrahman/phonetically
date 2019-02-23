@@ -78,15 +78,17 @@ class App extends React.Component<Props, State> {
                             <TableCell style={{ alignItems: 'center' }}>
                               <Heading
                                 size={isMobile ? 'medium' : 'large'}
-                                margin="4px"
+                                margin={isMobile ? '2px' : '4px'}
                               >
                                 {character.toUpperCase()}
                               </Heading>
 
                               <Text
-                                style={{ fontWeight: 'bold' }}
-                                size={isMobile ? 'small' : 'medium'}
-                                margin="4px"
+                                style={{
+                                  fontWeight: 'bold',
+                                  fontSize: isMobile ? 18 : 26,
+                                }}
+                                margin={isMobile ? '2px' : '4px'}
                               >
                                 {mapping[character.toLowerCase()]}
                               </Text>
