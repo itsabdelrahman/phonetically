@@ -4,10 +4,12 @@
 
 <h1 align="center">Dialogue</h1>
 
-<p align="center">
+<div align="center">
   <b>Spell words phonetically with ease</b>
-  <sub>“The ability to simplify means to eliminate the unnecessary so that the necessary may speak.” — Hans Hofmann</sub>
-</p>
+
+<sub>“The ability to simplify means to eliminate the unnecessary so that the necessary may speak.” — Hans Hofmann</sub>
+
+</div>
 
 <img src="https://user-images.githubusercontent.com/11808903/53286460-1d100f00-376f-11e9-9e7b-7873556ab8dc.png" />
 
