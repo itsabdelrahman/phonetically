@@ -20,6 +20,7 @@ class App extends React.Component<Props, State> {
 
     return (
       <Grommet
+        style={{ backgroundColor: 'black' }}
         full={true}
         theme={{
           global: {
@@ -31,13 +32,12 @@ class App extends React.Component<Props, State> {
           },
         }}
       >
-        <Box
-          flex={true}
-          pad="large"
-          background={{ color: 'black' }}
-          border={{ color: '#81FCED', size: 'large' }}
-        >
-          <Box style={{ flex: 0.2 }}>
+        <Box flex={true} pad="large" background={{ color: 'black' }}>
+          <Box
+            style={{ flex: 0.2 }}
+            pad="small"
+            border={{ color: '#81FCED', size: 'small' }}
+          >
             <TextInput
               plain={true}
               placeholder="Type something here"
@@ -50,7 +50,7 @@ class App extends React.Component<Props, State> {
             />
           </Box>
 
-          <Box style={{ flex: 0.8 }}>
+          <Box style={{ flex: 0.8, marginTop: 24 }}>
             <Table>
               {words.map((word, index) => {
                 const characters: string[] = word.split('');
