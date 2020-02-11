@@ -1,26 +1,99 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import {
+  Grommet,
+  Box,
+  Heading,
+  Text,
+  TextInput,
+  Table,
+  TableCell,
+} from 'grommet';
+import MediaQuery from 'react-responsive';
+import alphabet from './alphabet';
 
-const App = () => {
+const App: React.FC = () => {
+  const [text, setText] = useState('');
+
+  const words = text.split(' ');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grommet
+      style={{ backgroundColor: 'black' }}
+      full={true}
+      theme={{
+        global: {
+          font: {
+            family: 'Lato',
+            size: '40px',
+            height: '20px',
+          },
+        },
+      }}
+    >
+      <MediaQuery maxDeviceWidth={767}>
+        {isMobile => {
+          return (
+            <Box flex={true} pad="large" background={{ color: 'black' }}>
+              <Box
+                style={{ flex: 0.2 }}
+                pad="xsmall"
+                border={{ color: '#81FCED', size: 'small' }}
+              >
+                <TextInput
+                  style={{ fontSize: isMobile ? 24 : 40 }}
+                  plain={true}
+                  placeholder="Type something here"
+                  autoFocus={true}
+                  spellCheck={false}
+                  value={text}
+                  onChange={event => {
+                    setText(event.target.value);
+                  }}
+                />
+              </Box>
+
+              <Box
+                style={{ flex: 0.8, marginTop: 24, marginBottom: 24 }}
+                overflow="scroll"
+                wrap={true}
+              >
+                <Table>
+                  {words.map((word, index) => {
+                    const characters = word.split('');
+
+                    return (
+                      <div key={index}>
+                        {characters.map(character => (
+                          <TableCell style={{ alignItems: 'center' }}>
+                            <Heading
+                              size={isMobile ? 'medium' : 'large'}
+                              margin={isMobile ? '2px' : '4px'}
+                            >
+                              {character.toUpperCase()}
+                            </Heading>
+
+                            <Text
+                              style={{
+                                fontWeight: 'bold',
+                                fontSize: isMobile ? 18 : 26,
+                              }}
+                              margin={isMobile ? '2px' : '4px'}
+                            >
+                              {alphabet[character.toLowerCase()]}
+                            </Text>
+                          </TableCell>
+                        ))}
+                      </div>
+                    );
+                  })}
+                </Table>
+              </Box>
+            </Box>
+          );
+        }}
+      </MediaQuery>
+    </Grommet>
   );
-}
+};
 
 export default App;
