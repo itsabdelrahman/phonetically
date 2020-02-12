@@ -8,6 +8,8 @@
   <b>Spell words phonetically with ease</b>
 </div>
 
+<img src="https://user-images.githubusercontent.com/11808903/74293787-1988e580-4d3c-11ea-861a-d437067bc24f.png" />
+
 <br />
 
 ## Development
